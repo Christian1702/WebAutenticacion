@@ -1,0 +1,189 @@
+:root {
+    --primary: #ffffff;
+    --accent: #007bff; /* azul estilo moderno */
+    --background: #0a0a0a;
+    --form-bg: #1c1c1c;
+    --text: #f0f0f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.branding {
+    text-align: center;
+}
+
+.branding .logo {
+    width: 200px;
+    margin-bottom: 0.5rem;
+}
+
+.branding h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.branding p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.form-wrapper {
+    background-color: var(--form-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #007bff55;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.toggle-buttons {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.toggle-buttons button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 0.8rem;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.toggle-buttons button.active {
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+.forms-slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form-section {
+    width: 50%;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button[type="submit"] {
+    padding: 0.9rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #3399ff;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 8px;
+}
+
+.forgot-password a {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .branding h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-wrapper {
+        padding: 1rem;
+    }
+
+    .toggle-buttons button {
+        font-size: 0.9rem;
+    }
+}
+
+::selection {
+    background-color: #4CAF50;
+    color: white;
+}
